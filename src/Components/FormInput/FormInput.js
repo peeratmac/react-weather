@@ -9,7 +9,7 @@ class FormInput extends Component {
   render() {
     return (
       <section className='form'>
-        <h1>Form Component</h1>
+        <h3>City or Country to Lookup. Go ahead!</h3>
         <form>
           <input
             name='city'
@@ -33,6 +33,29 @@ class FormInput extends Component {
             Get Weather
           </button>
         </form>
+        <h3>Know the Lattitude and Longtitude? Try this.</h3>
+        <input
+          name='lattitude'
+          type='text'
+          value={''}
+          placeholder='Lattitude'
+          onChange={() => {}}
+          className='form-input'
+        />
+
+        <input
+          name='longtitude'
+          type='text'
+          value={''}
+          placeholder='Longtitude'
+          onChange={() => {}}
+          className='form-input'
+        />
+
+        <button onClick={this.handleGetWeather} className='submit-button'>
+          Get Weather
+        </button>
+        <form></form>
       </section>
     );
   }

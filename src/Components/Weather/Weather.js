@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 
 class Weather extends Component {
   render() {
-    // const cityTitle = this.props.cities.map(city => city.title);
-
     return (
       <section>
-        <h1>Weather Component</h1>
-        <h2></h2>
+        <h1>WeatherComponent</h1>
+        <h2>Weather Cards Below (Weather Component right now)</h2>
       </section>
     );
   }
