@@ -5,8 +5,8 @@ class WeatherCard extends Component {
   render() {
     const { cities } = this.props;
 
-    return cities.map(city => {
-      return <h1>{city.title}</h1>;
+    return cities.map((city, i) => {
+      return <h1 key={i}>{city.title}</h1>;
     });
   }
 }

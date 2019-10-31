@@ -35,19 +35,10 @@ class FormInput extends Component {
         </form>
         <h3>Know the Latitude and Longitude? Try this.</h3>
         <input
-          name='latitude'
+          name='lat-long'
           type='text'
           value={''}
-          placeholder='Latitude'
-          onChange={() => {}}
-          className='form-input'
-        />
-
-        <input
-          name='longitude'
-          type='text'
-          value={''}
-          placeholder='Longitude'
+          placeholder='Latitude and Longitude'
           onChange={() => {}}
           className='form-input'
         />

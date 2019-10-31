@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { fetchPopularCities, fetchLattitudeLongtitude } from '../../apiCalls';
+import {
+  fetchPopularCities,
+  fetchLattitudeLongtitude,
+  fetchCity
+} from '../../apiCalls';
 import FormInput from '../../Components/FormInput/FormInput';
 import Weather from '../../Components/Weather/Weather';
 import WeatherCard from '../../Components/WeatherCard/WeatherCard';
@@ -13,6 +17,9 @@ class App extends Component {
     fetchPopularCities().then(cities => {
       this.props.loadCities(cities);
     });
+
+    fetchLattitudeLongtitude();
+    fetchCity('SAN');
   };
 
   render() {
