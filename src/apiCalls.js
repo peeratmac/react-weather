@@ -6,8 +6,9 @@ export const fetchPopularCities = async () => {
   if (!response.ok) {
     throw Error('Failed to get weather data');
   } else {
-    const weatherData = await response.json();
+    let weatherData = await response.json();
     console.log(weatherData);
+    return weatherData;
   }
 };
 
