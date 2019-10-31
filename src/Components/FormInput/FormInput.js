@@ -33,21 +33,21 @@ class FormInput extends Component {
             Get Weather
           </button>
         </form>
-        <h3>Know the Lattitude and Longtitude? Try this.</h3>
+        <h3>Know the Latitude and Longitude? Try this.</h3>
         <input
-          name='lattitude'
+          name='latitude'
           type='text'
           value={''}
-          placeholder='Lattitude'
+          placeholder='Latitude'
           onChange={() => {}}
           className='form-input'
         />
 
         <input
-          name='longtitude'
+          name='longitude'
           type='text'
           value={''}
-          placeholder='Longtitude'
+          placeholder='Longitude'
           onChange={() => {}}
           className='form-input'
         />
