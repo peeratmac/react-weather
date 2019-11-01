@@ -12,3 +12,13 @@ export const getLatLong = latLong => ({
   type: 'GET_LAT_LONG',
   latLong
 });
+
+export const loadWeather = stationIDs => ({
+  type: 'LOAD_WEATHER',
+  stationIDs
+});
+
+export const setWeatherInfo = weatherInfo => ({
+  type: 'SET_WEATHER_INFO',
+  weatherInfo
+});
