@@ -15,7 +15,7 @@ import { loadCities, loadWeather } from '../../actions/index';
 
 class App extends Component {
   componentDidMount = async () => {
-    fetchPopularCities('d').then(cities => {
+    fetchPopularCities('SAN').then(cities => {
       console.log(cities);
       this.props.loadCities(cities);
       const IDs = cities.map(city => city.woeid);

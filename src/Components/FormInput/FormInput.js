@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { targetCity, getLatLong } from '../../actions';
+import { targetCity, getLatLong, setWeatherInfo } from '../../actions';
 import {
   fetchLatLong,
   fetchPopularCities,
@@ -25,9 +25,11 @@ class FormInput extends Component {
 
   handleGetWeatherWithStationID = async event => {
     event.preventDefault();
-    const x = this.props.stationIDs[0];
-    const y = await fetchUsingStationID(x);
-    console.log(y);
+    const x = this.props.stationIDs.map(
+      async x => await fetchUsingStationID(x)
+    );
+
+    return Promise.all(x);
   };
 
   render() {
@@ -45,7 +47,12 @@ class FormInput extends Component {
           />
 
           <button
-            onClick={this.handleGetWeatherWithStationID}
+            onClick={async event => {
+              event.preventDefault();
+              const weather = await this.handleGetWeatherWithStationID(event);
+              console.log(weather);
+              this.props.setWeatherInfo(weather);
+            }}
             className='submit-button'
           >
             Get Weather
@@ -62,7 +69,7 @@ class FormInput extends Component {
             className='form-input'
           />
 
-          <button onClick={this.handleGetWeather} className='submit-button'>
+          <button onClick={this.hand} className='submit-button'>
             Get Weather
           </button>
         </form>
@@ -88,13 +95,15 @@ class FormInput extends Component {
 
 export const mapDispatchToProps = dispatch => ({
   targetCity: cityName => dispatch(targetCity(cityName)),
-  getLatLong: latLong => dispatch(getLatLong(latLong))
+  getLatLong: latLong => dispatch(getLatLong(latLong)),
+  setWeatherInfo: weatherInfo => dispatch(setWeatherInfo(weatherInfo))
 });
 
 export const mapStateToProps = state => ({
   selectedCity: state.selectedCity,
   latLong: state.latLong,
-  stationIDs: state.stationIDs
+  stationIDs: state.stationIDs,
+  weatherInfo: state.weatherInfo
 });
 
 export default connect(

@@ -4,6 +4,26 @@ import './WeatherCard.css';
 import { fetchUsingStationID } from '../../apiCalls';
 
 class WeatherCard extends Component {
+  handleGetWeatherWithStationID = async event => {
+    // event.preventDefault();
+    // const x = this.props.stationIDs[0];
+    // const y = await fetchUsingStationID(x);
+    // console.log(y.title);
+    // return y.title;
+
+    const x = this.props.stationIDs.map(
+      async id => await fetchUsingStationID(id)
+    );
+    console.log(x.title);
+  };
+
+  componentDidMount() {
+    const x = this.props.stationIDs.map(
+      async id => await fetchUsingStationID(id)
+    );
+    console.log(x.title);
+  }
+
   render() {
     console.log('WeatherCard props', this.props);
     const { cities } = this.props;
