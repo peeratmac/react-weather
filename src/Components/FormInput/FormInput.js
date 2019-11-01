@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { targetCity, getLatLong } from '../../actions';
-import { fetchLatLong, fetchPopularCities } from '../../apiCalls';
+import {
+  fetchLatLong,
+  fetchPopularCities,
+  fetchUsingStationID
+} from '../../apiCalls';
 
 class FormInput extends Component {
   handleCity = event => {
@@ -19,10 +23,11 @@ class FormInput extends Component {
     console.log('Get Weather Button');
   };
 
-  handleGetWeatherWithStationID = event => {
+  handleGetWeatherWithStationID = async event => {
     event.preventDefault();
     const x = this.props.stationIDs[0];
-    console.log(x);
+    const y = await fetchUsingStationID(x);
+    console.log(y);
   };
 
   render() {
