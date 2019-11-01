@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchUsingStationID } from '../../apiCalls';
 
 class Weather extends Component {
+  constructor() {
+    super();
+    this.state = {
+      weatherState: []
+    };
+  }
+
+  componentDidMount() {
+    // fetchUsingStationID(this.props.stationIDs[0]).then(data =>
+    //   console.log(data.consolidated_weather[0].weather_state_name)
+    // );
+  }
+
   render() {
     return (
       <section>
@@ -13,7 +27,8 @@ class Weather extends Component {
 }
 
 const mapStateToProps = state => ({
-  cities: state.cities
+  cities: state.cities,
+  stationIDs: state.stationIDs
 });
 
 export default connect(

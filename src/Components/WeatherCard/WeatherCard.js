@@ -8,9 +8,9 @@ class WeatherCard extends Component {
     console.log('WeatherCard props', this.props);
     const { cities } = this.props;
     return cities.map((city, i) => {
-      fetchUsingStationID(this.props.stationIDs[i]).then(data =>
-        console.log(data.consolidated_weather[0].weather_state_name)
-      );
+      // fetchUsingStationID(this.props.stationIDs[i]).then(data =>
+      //   console.log(data.consolidated_weather[0].weather_state_name)
+      // );
 
       return (
         <div className='card'>

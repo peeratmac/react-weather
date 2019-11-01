@@ -14,9 +14,38 @@ class FormInput extends Component {
     fetchLatLong(event.target.value);
   };
 
+  handleGetWeather = event => {
+    event.preventDefault();
+    console.log('Get Weather Button');
+  };
+
+  handleGetWeatherWithStationID = event => {
+    event.preventDefault();
+    const x = this.props.stationIDs[0];
+    console.log(x);
+  };
+
   render() {
     return (
       <section className='form'>
+        <h3>USE WEATHER STATION ID (BEST WAY)</h3>
+        <form>
+          <input
+            name='station'
+            type='text'
+            value={''}
+            placeholder='Weather Station ID'
+            onChange={''}
+            className='form-input'
+          />
+
+          <button
+            onClick={this.handleGetWeatherWithStationID}
+            className='submit-button'
+          >
+            Get Weather
+          </button>
+        </form>
         <h3>City or Country to Lookup. Go ahead!</h3>
         <form>
           <input
