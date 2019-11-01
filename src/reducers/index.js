@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
 import { cities } from './loadCities';
+import { targetCity } from './targetCity';
+import { getLatLong } from './latLong';
 
 export const rootReducer = combineReducers({
-  cities
+  cities,
+  targetCity,
+  getLatLong
 });
