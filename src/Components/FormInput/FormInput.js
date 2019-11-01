@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { targetCity, getLatLong } from '../../actions';
-import { fetchLatLong } from '../../apiCalls';
+import { fetchLatLong, fetchPopularCities } from '../../apiCalls';
 
 class FormInput extends Component {
   handleCity = event => {
     this.props.targetCity(event.target.value);
+    fetchPopularCities(event.target.value);
   };
 
   handleLatLong = event => {
     this.props.getLatLong(event.target.value);
+    fetchLatLong(event.target.value);
   };
 
   render() {
@@ -57,7 +59,8 @@ export const mapDispatchToProps = dispatch => ({
 
 export const mapStateToProps = state => ({
   selectedCity: state.selectedCity,
-  latLong: state.latLong
+  latLong: state.latLong,
+  stationIDs: state.stationIDs
 });
 
 export default connect(

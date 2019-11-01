@@ -16,6 +16,7 @@ export const fetchPopularCities = async city => {
 };
 
 export const fetchUsingStationID = async stationID => {
+  console.log(stationID);
   const response = await fetch(
     `https://www.metaweather.com/api/location/${stationID}`
   );
@@ -75,6 +76,8 @@ export const fetchLatLong = async latLong => {
   } else {
     const weatherData = await response.json();
     console.log('LAT-LONG', weatherData);
+    console.log('LAT-LONG INDEX ZERO', weatherData[0]);
+    return weatherData[0];
   }
 };
 

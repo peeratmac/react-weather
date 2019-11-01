@@ -11,7 +11,7 @@ import WeatherCard from '../../Components/WeatherCard/WeatherCard';
 import './App.css';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loadCities } from '../../actions/index';
+import { loadCities, loadWeather } from '../../actions/index';
 
 class App extends Component {
   componentDidMount = async () => {
@@ -20,9 +20,7 @@ class App extends Component {
       this.props.loadCities(cities);
       const IDs = cities.map(city => city.woeid);
       console.log(IDs);
-      fetchPopularWeather('NEW').then(cities => {
-        console.log(cities);
-      });
+      this.props.loadWeather(IDs);
     });
   };
 
@@ -39,11 +37,13 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  loadCities: cities => dispatch(loadCities(cities))
+  loadCities: cities => dispatch(loadCities(cities)),
+  loadWeather: stationIDs => dispatch(loadWeather(stationIDs))
 });
 
 const mapStateToProps = state => ({
-  cities: state.cities
+  cities: state.cities,
+  stationIDs: state.stationIDs
 });
 
 export default connect(
