@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   fetchPopularCities,
   fetchLattitudeLongtitude,
-  fetchCity
+  fetchCity,
+  fetchPopularWeather
 } from '../../apiCalls';
 import FormInput from '../../Components/FormInput/FormInput';
 import Weather from '../../Components/Weather/Weather';
@@ -14,12 +15,15 @@ import { loadCities } from '../../actions/index';
 
 class App extends Component {
   componentDidMount = async () => {
-    fetchPopularCities().then(cities => {
+    fetchPopularCities('NEW').then(cities => {
+      console.log(cities);
       this.props.loadCities(cities);
+      const IDs = cities.map(city => city.woeid);
+      console.log(IDs);
+      fetchPopularWeather('NEW').then(cities => {
+        console.log(cities);
+      });
     });
-
-    fetchLattitudeLongtitude();
-    fetchCity('SAN');
   };
 
   render() {

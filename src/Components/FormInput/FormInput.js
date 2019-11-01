@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { targetCity } from '../../actions';
 
 class FormInput extends Component {
   handleGetWeather = event => {
@@ -52,4 +54,15 @@ class FormInput extends Component {
   }
 }
 
-export default FormInput;
+export const mapDispatchToProps = dispatch => ({
+  targetCity: cityName => dispatch(targetCity(cityName))
+});
+
+export const mapStateToProps = state => ({
+  targetCity: state.targetCity
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FormInput);
