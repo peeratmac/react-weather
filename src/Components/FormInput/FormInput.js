@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { targetCity, getLatLong, setWeatherInfo } from '../../actions';
+import {
+  targetCity,
+  getLatLong,
+  setWeatherInfo,
+  getCurrentStation
+} from '../../actions';
 import {
   fetchLatLong,
   fetchPopularCities,
@@ -18,6 +23,11 @@ class FormInput extends Component {
     fetchLatLong(event.target.value);
   };
 
+  handleGetCurrentStation = event => {
+    console.log(event.target.value);
+    this.props.getCurrentStation(event.target.value);
+  };
+
   handleGetWeather = event => {
     event.preventDefault();
     console.log('Get Weather Button');
@@ -32,6 +42,13 @@ class FormInput extends Component {
     return Promise.all(x);
   };
 
+  grabWeatherDataWithStationID = async event => {
+    event.preventDefault();
+    const weather = await this.handleGetWeatherWithStationID(event);
+    console.log(weather);
+    this.props.setWeatherInfo(weather);
+  };
+
   render() {
     return (
       <section className='form'>
@@ -40,19 +57,14 @@ class FormInput extends Component {
           <input
             name='station'
             type='text'
-            value={''}
+            value={this.props.currentStation}
             placeholder='Weather Station ID'
-            onChange={''}
+            onChange={this.handleGetCurrentStation}
             className='form-input'
           />
 
           <button
-            onClick={async event => {
-              event.preventDefault();
-              const weather = await this.handleGetWeatherWithStationID(event);
-              console.log(weather);
-              this.props.setWeatherInfo(weather);
-            }}
+            onClick={this.grabWeatherDataWithStationID}
             className='submit-button'
           >
             Get Weather
@@ -96,14 +108,17 @@ class FormInput extends Component {
 export const mapDispatchToProps = dispatch => ({
   targetCity: cityName => dispatch(targetCity(cityName)),
   getLatLong: latLong => dispatch(getLatLong(latLong)),
-  setWeatherInfo: weatherInfo => dispatch(setWeatherInfo(weatherInfo))
+  setWeatherInfo: weatherInfo => dispatch(setWeatherInfo(weatherInfo)),
+  getCurrentStation: currentStation =>
+    dispatch(getCurrentStation(currentStation))
 });
 
 export const mapStateToProps = state => ({
   selectedCity: state.selectedCity,
   latLong: state.latLong,
   stationIDs: state.stationIDs,
-  weatherInfo: state.weatherInfo
+  weatherInfo: state.weatherInfo,
+  currentStation: state.currentStation
 });
 
 export default connect(

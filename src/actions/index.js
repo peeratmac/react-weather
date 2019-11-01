@@ -22,3 +22,8 @@ export const setWeatherInfo = weatherInfo => ({
   type: 'SET_WEATHER_INFO',
   weatherInfo
 });
+
+export const getCurrentStation = currentStation => ({
+  type: 'GET_CURRENT_STATION',
+  currentStation
+});
