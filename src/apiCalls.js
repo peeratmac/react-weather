@@ -22,7 +22,7 @@ export const fetchUsingStationID = async stationID => {
 
   let data = await response.json();
   console.log('fetchUsingStationID', data);
-  return data.sun_rise;
+  return data;
 };
 
 export const fetchPopularWeather = async city => {
@@ -51,9 +51,23 @@ export const fetchPopularWeather = async city => {
     return weatherData;
   }
 };
+
 export const fetchLattitudeLongtitude = async () => {
   const response = await fetch(
     'https://www.metaweather.com/api/location/search/?lattlong=39.740009,-104.992264'
+  );
+
+  if (!response.ok) {
+    throw Error('Failed to get weather data');
+  } else {
+    const weatherData = await response.json();
+    console.log('LAT-LONG', weatherData);
+  }
+};
+
+export const fetchLatLong = async latLong => {
+  const response = await fetch(
+    `https://www.metaweather.com/api/location/search/?lattlong=${latLong}`
   );
 
   if (!response.ok) {

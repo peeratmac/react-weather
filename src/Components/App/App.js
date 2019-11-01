@@ -32,7 +32,6 @@ class App extends Component {
       <div className='app'>
         <h1>Weather App</h1>
         <FormInput />
-        <Weather />
         <WeatherCard />
       </div>
     );

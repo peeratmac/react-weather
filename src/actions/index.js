@@ -7,3 +7,8 @@ export const targetCity = selectedCity => ({
   type: 'TARGET_CITY',
   selectedCity
 });
+
+export const getLatLong = latLong => ({
+  type: 'GET_LAT_LONG',
+  latLong
+});
