@@ -7,11 +7,11 @@ class Nav extends Component {
       <nav>
         <h2>Weather</h2>
         <ul className='nav-links'>
-          <Link to='/favorites'>
-            <li>Favorites</li>
+          <Link to='/list1'>
+            <li>List 1</li>
           </Link>
-          <Link to='/customlist'>
-            <li>Custom</li>
+          <Link to='/list2'>
+            <li>List 2</li>
           </Link>
           <Link to='/'>
             <li>Home</li>

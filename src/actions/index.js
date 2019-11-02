@@ -27,3 +27,8 @@ export const getCurrentStation = currentStation => ({
   type: 'GET_CURRENT_STATION',
   currentStation
 });
+
+export const updateFavorties = favorites => ({
+  type: 'UPDATE_FAVORITES',
+  favorites
+});

@@ -1,21 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './FormInput.scss';
 import {
   targetCity,
   getLatLong,
   setWeatherInfo,
-  getCurrentStation
+  getCurrentStation,
+  loadCities,
+  loadWeather
 } from '../../actions';
 import {
   fetchLatLong,
   fetchPopularCities,
   fetchUsingStationID
 } from '../../apiCalls';
+import { Redirect } from 'react-router';
 
 class FormInput extends Component {
+  constructor() {
+    super();
+    this.state = {
+      weatherState: []
+    };
+  }
   handleCity = event => {
     this.props.targetCity(event.target.value);
     fetchPopularCities(event.target.value);
+  };
+
+  handleCityInput = event => {
+    event.preventDefault();
+    fetchPopularCities(this.props.selectedCity);
+    this.props.loadCities(this.props.selectedCity);
   };
 
   handleLatLong = event => {
@@ -47,13 +63,28 @@ class FormInput extends Component {
     event.preventDefault();
     const weather = await this.handleGetWeatherWithStationID(event);
     console.log(weather);
+    this.setState({ weatherState: weather });
     this.props.setWeatherInfo(weather);
+    window.alert(
+      'Weather Data Now In Place inside weatherInformation Redux Store'
+    );
+  };
+
+  getSpecificWeather = event => {
+    event.preventDefault();
+    console.log(this.props);
+    console.log(this.state);
+    const x = this.state.weatherState.map((city, i) => {
+      return city.consolidated_weather[i];
+    });
+    console.log(x);
+    return x;
   };
 
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className='form-section'>
         <section className='form'>
           <h3>USE WEATHER STATION ID</h3>
           <form>
@@ -70,7 +101,10 @@ class FormInput extends Component {
               onClick={this.grabWeatherDataWithStationID}
               className='submit-button'
             >
-              Get Weather
+              Send Station Data
+            </button>
+            <button onClick={this.getSpecificWeather} className='submit-button'>
+              Get Specific Weather
             </button>
           </form>
           <h3>CITY LOOKUP</h3>
@@ -84,7 +118,7 @@ class FormInput extends Component {
               className='form-input'
             />
 
-            <button onClick={this.hand} className='submit-button'>
+            <button onClick={this.handleCityInput} className='submit-button'>
               Get Weather
             </button>
           </form>
@@ -114,15 +148,18 @@ export const mapDispatchToProps = dispatch => ({
   getLatLong: latLong => dispatch(getLatLong(latLong)),
   setWeatherInfo: weatherInfo => dispatch(setWeatherInfo(weatherInfo)),
   getCurrentStation: currentStation =>
-    dispatch(getCurrentStation(currentStation))
+    dispatch(getCurrentStation(currentStation)),
+  loadCities: cities => dispatch(loadCities(cities)),
+  loadWeather: stationIDs => dispatch(loadWeather(stationIDs))
 });
 
 export const mapStateToProps = state => ({
-  selectedCity: state.selectedCity,
+  selectedCity: state.targetCity,
   latLong: state.latLong,
   stationIDs: state.stationIDs,
   weatherInfo: state.weatherInfo,
-  currentStation: state.currentStation
+  currentStation: state.currentStation,
+  cities: state.cities
 });
 
 export default connect(

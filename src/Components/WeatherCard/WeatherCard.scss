@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+$base-weather: #38ada9;
+$city-label: #82ccdd;
+$weather-station-id-label: #45aaf2;
+$weather-station-id: #f8c291;
+$lat-long-label: #78e08f;
+$lat-long: #1dd1a1;
+
+$red-alert-error: #ee5253;
+$newly-append-card: #ff9f43;
+
+.card {
+  border: 10px solid $base-weather;
+  border-radius: 25px;
+  margin: 10px;
+  text-align: center;
+  padding: 20px;
+  background: url('https://www.metaweather.com/static/img/weather/lc.svg');
+}
+
+.city-title {
+  background-color: $city-label;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.weather-station-label {
+  background-color: $weather-station-id-label;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.weather-station-id {
+  background-color: $weather-station-id;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.lat-long-label {
+  background-color: $lat-long-label;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.lat-long {
+  background-color: $lat-long;
+  padding: 5px;
+  border-radius: 5px;
+}
