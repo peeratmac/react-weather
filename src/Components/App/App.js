@@ -28,9 +28,9 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className='app'>
-        <h1>Weather App</h1>
+        <h1>Find Your Weather Station</h1>
         <FormInput />
-        <Weather weatherCards={this.props.stationIDs} />
+        {/* <Weather weatherCards={this.props.stationIDs} /> */}
         <WeatherCard />
       </div>
     );

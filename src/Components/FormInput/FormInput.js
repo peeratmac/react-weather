@@ -26,6 +26,7 @@ class FormInput extends Component {
   handleGetCurrentStation = event => {
     console.log(event.target.value);
     this.props.getCurrentStation(event.target.value);
+    // fetchUsingStationID(this.props.currentStation);
   };
 
   handleGetWeather = event => {
@@ -50,57 +51,60 @@ class FormInput extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
-      <section className='form'>
-        <h3>USE WEATHER STATION ID (BEST WAY)</h3>
-        <form>
-          <input
-            name='station'
-            type='text'
-            value={this.props.currentStation}
-            placeholder='Weather Station ID'
-            onChange={this.handleGetCurrentStation}
-            className='form-input'
-          />
+      <div>
+        <section className='form'>
+          <h3>USE WEATHER STATION ID</h3>
+          <form>
+            <input
+              name='station'
+              type='text'
+              value={this.props.currentStation}
+              placeholder='Weather Station ID'
+              onChange={this.handleGetCurrentStation}
+              className='form-input'
+            />
 
-          <button
-            onClick={this.grabWeatherDataWithStationID}
-            className='submit-button'
-          >
-            Get Weather
-          </button>
-        </form>
-        <h3>City or Country to Lookup. Go ahead!</h3>
-        <form>
-          <input
-            name='city'
-            type='text'
-            value={this.props.selectedCity}
-            placeholder='City'
-            onChange={this.handleCity}
-            className='form-input'
-          />
+            <button
+              onClick={this.grabWeatherDataWithStationID}
+              className='submit-button'
+            >
+              Get Weather
+            </button>
+          </form>
+          <h3>CITY LOOKUP</h3>
+          <form>
+            <input
+              name='city'
+              type='text'
+              value={this.props.selectedCity}
+              placeholder='City'
+              onChange={this.handleCity}
+              className='form-input'
+            />
 
-          <button onClick={this.hand} className='submit-button'>
-            Get Weather
-          </button>
-        </form>
-        <h3>Know the Latitude and Longitude? Try this.</h3>
-        <form>
-          <input
-            name='lat-long'
-            type='text'
-            value={this.props.latLong}
-            placeholder='Latitude and Longitude'
-            onChange={this.handleLatLong}
-            className='form-input'
-          />
+            <button onClick={this.hand} className='submit-button'>
+              Get Weather
+            </button>
+          </form>
+          <h3>LATITUDE and LONGITUDE</h3>
+          <form>
+            <input
+              name='lat-long'
+              type='text'
+              value={this.props.latLong}
+              placeholder='Latitude and Longitude'
+              onChange={this.handleLatLong}
+              className='form-input'
+            />
 
-          <button onClick={this.handleGetWeather} className='submit-button'>
-            Get Weather
-          </button>
-        </form>
-      </section>
+            <button onClick={this.handleGetWeather} className='submit-button'>
+              Get Weather
+            </button>
+          </form>
+        </section>
+      </div>
     );
   }
 }
