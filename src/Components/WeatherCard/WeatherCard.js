@@ -41,9 +41,19 @@ class WeatherCard extends Component {
       return (
         <div className='card'>
           <section onClick={event => console.log(event.target)}>
-            <h1 key={i}>{city.title}</h1>
-            <h3 id='weather-station-id'>WeatherStationID: {city.woeid}</h3>
-            <h3 id='lat-long'>Lat/Long: {city.latt_long}</h3>
+            <h1 key={i}>
+              <span className='city-title'>{city.title}</span>
+            </h1>
+            <h3>
+              <span className='weather-station-label'>Weather Station ID:</span>{' '}
+              {'  '}
+              <span className='weather-station-id'>{city.woeid}</span>
+            </h3>
+            <h3>
+              <span className='lat-long-label'>Lat/Long:</span>
+              {'  '}
+              <span className='lat-long'>{city.latt_long}</span>
+            </h3>
           </section>
         </div>
       );
