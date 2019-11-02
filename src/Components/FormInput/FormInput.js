@@ -84,7 +84,7 @@ class FormInput extends Component {
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div className='form-section'>
         <section className='form'>
           <h3>USE WEATHER STATION ID</h3>
           <form>
