@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FORM INPUT should match the FormInput Snapshot 1`] = `
+<div
+  className="form-section"
+>
+  <section
+    className="form"
+  >
+    <h3>
+      USE WEATHER STATION ID
+    </h3>
+    <form>
+      <input
+        className="form-input"
+        name="station"
+        onChange={[Function]}
+        placeholder="Weather Station ID"
+        type="text"
+        value={47889}
+      />
+      <button
+        className="submit-button"
+        onClick={[Function]}
+      >
+        Send Station Data
+      </button>
+      <button
+        className="submit-button"
+        onClick={[Function]}
+      >
+        Get Specific Weather
+      </button>
+    </form>
+    <h3>
+      CITY LOOKUP
+    </h3>
+    <form>
+      <input
+        className="form-input"
+        name="city"
+        onChange={[Function]}
+        placeholder="City"
+        type="text"
+        value="Denver"
+      />
+      <button
+        className="submit-button"
+        onClick={[Function]}
+      >
+        Get Weather
+      </button>
+    </form>
+    <h3>
+      LATITUDE and LONGITUDE
+    </h3>
+    <form>
+      <input
+        className="form-input"
+        name="lat-long"
+        onChange={[Function]}
+        placeholder="Latitude and Longitude"
+        type="text"
+        value="1234,-2578"
+      />
+      <button
+        className="submit-button"
+        onClick={[Function]}
+      >
+        Get Weather
+      </button>
+    </form>
+  </section>
+</div>
+`;

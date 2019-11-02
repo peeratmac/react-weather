@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WEATHER CARD should match the WeatherCard Snapshot 1`] = `null`;
