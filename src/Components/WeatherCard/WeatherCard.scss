@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+$base-weather: #38ada9;
+$city-label: #82ccdd;
+$weather-station-id-label: #45aaf2;
+$lat-long-label: #78e08f;
+
+$main-tab-span-highlight: #1dd1a1;
+$red-alert-error: #ee5253;
+$newly-append-card: #ff9f43;
+$newly-append-card-secondary: #f8c291;
+
+.card {
+  border: 2px solid $base-weather;
+  border-radius: 25px;
+  margin: 10px;
+  text-align: center;
+  padding: 20px;
+}

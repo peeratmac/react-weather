@@ -30,6 +30,7 @@ class FormInput extends Component {
   handleCityInput = event => {
     event.preventDefault();
     fetchPopularCities(this.props.selectedCity);
+    this.props.loadCities(this.props.selectedCity);
   };
 
   handleLatLong = event => {

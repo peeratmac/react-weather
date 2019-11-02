@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './WeatherCard.css';
+import './WeatherCard.scss';
 import { fetchUsingStationID, fetchWeatherByCity } from '../../apiCalls';
 import { updateFavorites } from '../../actions/index';
 
