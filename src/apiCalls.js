@@ -26,6 +26,23 @@ export const fetchUsingStationID = async stationID => {
   return data;
 };
 
+// export const cleanFetchStation = async stationID => {
+//   console.log(stationID);
+//   const response = await fetch(
+//     `https://www.metaweather.com/api/location/${stationID}`
+//   );
+
+//   let data = await response.json();
+//   console.log('running clean fetch station');
+//   return data.consolidated_weather[0].map(weather => {
+//     return {
+//       day1condition: weather.weather_state_name,
+//       day1min: weather.min_temp,
+//       day1max: weather.max_temp
+//     };
+//   });
+// };
+
 export const fetchPopularWeather = async city => {
   const response = await fetch(
     `https://www.metaweather.com/api/location/search/?query=${city}`

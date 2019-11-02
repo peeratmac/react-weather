@@ -26,6 +26,10 @@ class WeatherCard extends Component {
     fetchWeatherByCity('London');
   }
 
+  returnWeatherInfo = () => {
+    console.log(this.props.weatherInfo);
+  };
+
   render() {
     console.log('WeatherCard props', this.props);
     const { cities } = this.props;
@@ -38,9 +42,8 @@ class WeatherCard extends Component {
         <div className='card'>
           <section onClick={event => console.log(event.target)}>
             <h1 key={i}>{city.title}</h1>
-            <h3>WeatherStationID: {city.woeid}</h3>
-            <h3>Lat/Long: {city.latt_long}</h3>
-            <h4></h4>
+            <h3 id='weather-station-id'>WeatherStationID: {city.woeid}</h3>
+            <h3 id='lat-long'>Lat/Long: {city.latt_long}</h3>
           </section>
         </div>
       );
@@ -52,7 +55,9 @@ const mapDispatchToProps = dispatch => ({});
 
 const mapStateToProps = state => ({
   cities: state.cities,
-  stationIDs: state.stationIDs
+  stationIDs: state.stationIDs,
+  weatherInfo: state.weatherInfo,
+  currentStation: state.currentStation
 });
 
 export default connect(
