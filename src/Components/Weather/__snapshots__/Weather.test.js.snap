@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WEATHER should match the Nav Snapshot 1`] = `
+<section>
+  <p>
+    Weather
+  </p>
+  <h2 />
+  <p>
+    Weather
+  </p>
+</section>
+`;

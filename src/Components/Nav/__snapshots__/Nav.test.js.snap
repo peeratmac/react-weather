@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NAV should match the Nav Snapshot 1`] = `
+<nav>
+  <h2>
+    Weather Station
+  </h2>
+  <ul
+    className="nav-links"
+  >
+    <Link
+      to="/list1"
+    >
+      <li>
+        List 1
+      </li>
+    </Link>
+    <Link
+      to="/list2"
+    >
+      <li>
+        List 2
+      </li>
+    </Link>
+    <Link
+      to="/"
+    >
+      <li>
+        Home
+      </li>
+    </Link>
+  </ul>
+</nav>
+`;

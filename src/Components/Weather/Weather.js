@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setWeatherInfo } from '../../actions';
 import { fetchUsingStationID } from '../../apiCalls';
 
-class Weather extends Component {
+export class Weather extends Component {
   grabWeatherDataWithStationID = () => {
     const weather = fetchUsingStationID(this.props.currentStation);
     console.log(weather);
@@ -16,9 +16,9 @@ class Weather extends Component {
       <section>
         <p>Weather</p>
         <h2>
-          {this.props.weatherInfo.map(
+          {/* {this.props.weatherInfo.map(
             x => x.consolidated_weather[0].weather_state_name
-          )}
+          )} */}
         </h2>
         <p>Weather</p>
       </section>

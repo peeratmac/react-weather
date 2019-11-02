@@ -4,7 +4,7 @@ import './WeatherCard.scss';
 import { fetchUsingStationID, fetchWeatherByCity } from '../../apiCalls';
 import { updateFavorites } from '../../actions/index';
 
-class WeatherCard extends Component {
+export class WeatherCard extends Component {
   handleGetWeatherWithStationID = async event => {
     // event.preventDefault();
     // const x = this.props.stationIDs[0];

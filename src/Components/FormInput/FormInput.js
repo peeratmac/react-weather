@@ -16,7 +16,7 @@ import {
 } from '../../apiCalls';
 import { Redirect } from 'react-router';
 
-class FormInput extends Component {
+export class FormInput extends Component {
   constructor() {
     super();
     this.state = {

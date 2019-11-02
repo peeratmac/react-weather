@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { fetchUsingStationID, fetchPopularCities } from '../../apiCalls';
 import WeatherCard from '../../Components/WeatherCard/WeatherCard';
 import { connect } from 'react-redux';
-class Favorites extends Component {
+export class Favorites extends Component {
   returnFavorites = () => {
     return this.props.weatherInfo.map((city, i) => {
       return (
