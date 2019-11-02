@@ -17,7 +17,7 @@ import { loadCities, loadWeather } from '../../actions/index';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-class App extends Component {
+export class App extends Component {
   componentDidMount = async () => {
     fetchPopularCities('a').then(cities => {
       console.log(cities);

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`APP should match the App Snapshot 1`] = `
+<BrowserRouter>
+  <div
+    className="app"
+  >
+    <Nav />
+    <Switch>
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Favorites)",
+            "type": [Function],
+          }
+        }
+        exact={true}
+        path="/list1"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/list2"
+      />
+      <h1>
+        Find Your Weather Station and Latitude Longitude
+      </h1>
+    </Switch>
+    <Connect(FormInput) />
+    <Connect(WeatherCard) />
+  </div>
+</BrowserRouter>
+`;

@@ -1,9 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { shallow } from 'enzyme';
+import { App } from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('APP', () => {
+  let wrapper;
+  const mockLoadCities = jest.fn();
+  const mockLoadWeather = jest.fn();
+  beforeEach(() => {
+    wrapper = shallow(
+      <App
+        cities={''}
+        stationIDs={''}
+        loadCities={mockLoadCities}
+        loadWeather={mockLoadWeather}
+      />
+    );
+  });
+
+  it('should match the App Snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });

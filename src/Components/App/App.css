@@ -26,8 +26,9 @@ nav {
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: #09d3ac;
+  background: #38ada9;
   color: white;
+  font-size: 40px;
 }
 
 .nav-links {
