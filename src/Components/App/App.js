@@ -8,6 +8,9 @@ import {
 import FormInput from '../../Components/FormInput/FormInput';
 import Weather from '../../Components/Weather/Weather';
 import WeatherCard from '../../Components/WeatherCard/WeatherCard';
+import Nav from '../../Components/Nav/Nav';
+import Favorites from '../../Components/Favorites/Favorites';
+import CustomList from '../../Components/CustomList/CustomList';
 import './App.css';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -28,6 +31,9 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className='app'>
+        <Nav />
+        <Favorites />
+        <CustomList />
         <h1>Find Your Weather Station</h1>
         <FormInput />
         {/* <Weather weatherCards={this.props.stationIDs} /> */}

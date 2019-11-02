@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
-export class Nav extends Component {
+class Nav extends Component {
   render() {
     return (
-      <div>
+      <nav>
         <h2>Weather</h2>
-        <ul>
+        <ul class='nav-links'>
           <li>Favorites</li>
           <li>Custom</li>
           <li>Home</li>
         </ul>
-      </div>
+      </nav>
     );
   }
 }
+
+export default Nav;
