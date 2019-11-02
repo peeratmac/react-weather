@@ -8,10 +8,14 @@ import {
 import FormInput from '../../Components/FormInput/FormInput';
 import Weather from '../../Components/Weather/Weather';
 import WeatherCard from '../../Components/WeatherCard/WeatherCard';
+import Nav from '../../Components/Nav/Nav';
+import Favorites from '../../Components/Favorites/Favorites';
+import CustomList from '../../Components/CustomList/CustomList';
 import './App.css';
-import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadCities, loadWeather } from '../../actions/index';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount = async () => {
@@ -27,12 +31,19 @@ class App extends Component {
   render() {
     console.log(this.props);
     return (
-      <div className='app'>
-        <h1>Weather App</h1>
-        <FormInput />
-        <Weather weatherCards={this.props.stationIDs} />
-        <WeatherCard />
-      </div>
+      <Router>
+        <div className='app'>
+          <Nav />
+          <Switch>
+            <Route exact path='/favorites' component={Favorites} />
+            <Route exact path='/customlist' component={CustomList} />
+          </Switch>
+          <h1>Find Your Weather Station</h1>
+          <FormInput />
+          {/* <Weather weatherCards={this.props.stationIDs} /> */}
+          <WeatherCard />
+        </div>
+      </Router>
     );
   }
 }
