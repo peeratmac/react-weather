@@ -13,6 +13,12 @@ import {
 } from '../../apiCalls';
 
 class FormInput extends Component {
+  constructor() {
+    super();
+    this.state = {
+      weatherState: []
+    };
+  }
   handleCity = event => {
     this.props.targetCity(event.target.value);
     fetchPopularCities(event.target.value);
@@ -47,7 +53,20 @@ class FormInput extends Component {
     event.preventDefault();
     const weather = await this.handleGetWeatherWithStationID(event);
     console.log(weather);
+    this.setState({ weatherState: weather });
     this.props.setWeatherInfo(weather);
+    window.alert(
+      'Weather Data Now In Place inside weatherInformation Redux Store'
+    );
+  };
+
+  getSpecificWeather = event => {
+    event.preventDefault();
+    console.log(this.props);
+    console.log(this.state);
+
+    const x = this.state.weatherState.map(city => city.sun_rise);
+    console.log(x);
   };
 
   render() {
@@ -70,7 +89,10 @@ class FormInput extends Component {
               onClick={this.grabWeatherDataWithStationID}
               className='submit-button'
             >
-              Get Weather
+              Send Station Data
+            </button>
+            <button onClick={this.getSpecificWeather} className='submit-button'>
+              Get Specific Weather
             </button>
           </form>
           <h3>CITY LOOKUP</h3>

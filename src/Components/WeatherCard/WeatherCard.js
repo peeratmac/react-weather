@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './WeatherCard.css';
-import { fetchUsingStationID } from '../../apiCalls';
+import { fetchUsingStationID, fetchWeatherByCity } from '../../apiCalls';
+import { updateFavorites } from '../../actions/index';
 
 class WeatherCard extends Component {
   handleGetWeatherWithStationID = async event => {
@@ -18,10 +19,11 @@ class WeatherCard extends Component {
   };
 
   componentDidMount() {
-    const x = this.props.stationIDs.map(
-      async id => await fetchUsingStationID(id)
-    );
-    console.log(x.title);
+    // const x = this.props.stationIDs.map(
+    //   async id => await fetchUsingStationID(id)
+    // );
+    // console.log(x.title);
+    fetchWeatherByCity('London');
   }
 
   render() {

@@ -48,8 +48,6 @@ export const fetchPopularWeather = async city => {
       console.log(weatherDetail);
       return weatherDetail;
     });
-
-    return weatherData;
   }
 };
 
@@ -93,4 +91,17 @@ export const fetchCity = async city => {
     console.log('SPECIFIC CITY INPUT', weatherData);
     return weatherData;
   }
+};
+
+// OpenWeather API (2nd Source)
+
+export const fetchWeatherByCity = async city => {
+  let apiKey = '322f485cfb44709621306089dd3ecc01';
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=Denver,CO&appid=${apiKey}`
+  );
+
+  const weatherData = await response.json();
+  console.log('2nd Source', weatherData);
+  return weatherData;
 };

@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   componentDidMount = async () => {
-    fetchPopularCities('SAN').then(cities => {
+    fetchPopularCities('new').then(cities => {
       console.log(cities);
       this.props.loadCities(cities);
       const IDs = cities.map(city => city.woeid);
@@ -38,7 +38,7 @@ class App extends Component {
             <Route exact path='/favorites' component={Favorites} />
             <Route exact path='/customlist' component={CustomList} />
           </Switch>
-          <h1>Find Your Weather Station</h1>
+          <h1>Find Your Weather Station and Latitude Longitude</h1>
           <FormInput />
           {/* <Weather weatherCards={this.props.stationIDs} /> */}
           <WeatherCard />

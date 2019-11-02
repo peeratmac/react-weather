@@ -5,6 +5,7 @@ import { getLatLong } from './latLong';
 import { loadWeather } from './loadWeather';
 import { setWeatherInfo } from './setWeatherInfo';
 import { getCurrentStation } from './getCurrentStation';
+import { favorites } from './favorites';
 
 export const rootReducer = combineReducers({
   cities,
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
   getLatLong,
   getCurrentStation,
   stationIDs: loadWeather,
-  weatherInformation: setWeatherInfo
+  weatherInformation: setWeatherInfo,
+  favorites
 });
