@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export class App extends Component {
   componentDidMount = async () => {
-    fetchPopularCities('a').then(cities => {
+    fetchPopularCities('new').then(cities => {
       console.log(cities);
       this.props.loadCities(cities);
       const IDs = cities.map(city => city.woeid);
