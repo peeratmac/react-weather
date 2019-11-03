@@ -13,8 +13,11 @@ export class Favorites extends Component {
     console.log('LIST-1', this.props);
     const { weatherInfo } = this.props;
     return weatherInfo.map((city, i) => {
+      let cardStyle = {
+        background: `url(https://www.metaweather.com/static/img/weather/${city.consolidated_weather[0].weather_state_abbr}.svg)`
+      };
       return (
-        <div className='forecast-card'>
+        <div className='forecast-card' style={cardStyle}>
           <h1>City: {city.title}</h1>
           <h1>
             <span>
