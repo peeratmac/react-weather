@@ -14,7 +14,7 @@ export class Favorites extends Component {
     const { weatherInfo } = this.props;
     return weatherInfo.map((city, i) => {
       return (
-        <div className='card'>
+        <div className='forecast-card'>
           <h1>City: {city.title}</h1>
           <h1>
             <span>
@@ -38,11 +38,6 @@ export class Favorites extends Component {
         </div>
       );
     });
-    return (
-      <div>
-        <h1>LIST 1 PAGE</h1>
-      </div>
-    );
   }
 }
 
