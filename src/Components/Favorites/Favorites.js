@@ -17,7 +17,7 @@ export class Favorites extends Component {
   render() {
     return (
       <div>
-        <div>{this.returnFavorites}</div>
+        <h1>LIST 1 PAGE</h1>
       </div>
     );
   }

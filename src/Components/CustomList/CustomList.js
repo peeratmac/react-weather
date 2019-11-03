@@ -4,7 +4,7 @@ export class CustomList extends Component {
   render() {
     return (
       <div>
-        <h2></h2>
+        <h1>LIST 2 PAGE</h1>
       </div>
     );
   }

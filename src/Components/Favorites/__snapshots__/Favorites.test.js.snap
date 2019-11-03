@@ -2,8 +2,8 @@
 
 exports[`FAVORITES should match the Favorites Snapshot 1`] = `
 <div>
-  <div>
-    <Component />
-  </div>
+  <h1>
+    LIST 1 PAGE
+  </h1>
 </div>
 `;
