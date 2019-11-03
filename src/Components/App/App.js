@@ -35,13 +35,21 @@ export class App extends Component {
         <div className='app'>
           <Nav />
           <Switch>
-            <Route exact path='/list1' component={Favorites} />
-            <Route exact path='/list2' component={CustomList} />
+            <Route
+              exact
+              path='/'
+              render={() => (
+                <div>
+                  <FormInput />
+                  <WeatherCard />
+                </div>
+              )}
+            />
+
+            <Route path='/list1' component={Favorites} />
+            <Route path='/list2' component={CustomList} />
             <h1>Find Your Weather Station and Latitude Longitude</h1>
           </Switch>
-          <FormInput />
-          {/* <Weather weatherCards={this.props.stationIDs} /> */}
-          <WeatherCard />
         </div>
       </Router>
     );

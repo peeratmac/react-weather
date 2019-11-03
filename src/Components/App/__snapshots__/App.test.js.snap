@@ -8,6 +8,11 @@ exports[`APP should match the App Snapshot 1`] = `
     <Nav />
     <Switch>
       <Route
+        exact={true}
+        path="/"
+        render={[Function]}
+      />
+      <Route
         component={
           Object {
             "$$typeof": Symbol(react.memo),
@@ -17,20 +22,16 @@ exports[`APP should match the App Snapshot 1`] = `
             "type": [Function],
           }
         }
-        exact={true}
         path="/list1"
       />
       <Route
         component={[Function]}
-        exact={true}
         path="/list2"
       />
       <h1>
         Find Your Weather Station and Latitude Longitude
       </h1>
     </Switch>
-    <Connect(FormInput) />
-    <Connect(WeatherCard) />
   </div>
 </BrowserRouter>
 `;
