@@ -6,7 +6,9 @@ describe('FAVORITES', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Favorites />);
+    wrapper = shallow(
+      <Favorites cities={''} stationIDs={[]} weatherInfo={[]} />
+    );
   });
 
   it('should match the Favorites Snapshot', () => {
