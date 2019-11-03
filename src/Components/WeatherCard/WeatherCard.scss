@@ -9,7 +9,6 @@ $weather-station-id-label: #45aaf2;
 $weather-station-id: #f8c291;
 $lat-long-label: #78e08f;
 $lat-long: #1dd1a1;
-
 $red-alert-error: #ee5253;
 $newly-append-card: #ff9f43;
 
@@ -28,7 +27,8 @@ $newly-append-card: #ff9f43;
   border-radius: 5px;
 }
 
-.weather-station-label {
+.weather-station-label,
+.current-condition-label {
   background-color: $weather-station-id-label;
   padding: 5px;
   border-radius: 5px;

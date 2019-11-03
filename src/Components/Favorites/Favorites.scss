@@ -4,14 +4,11 @@
 }
 
 $base-weather: #38ada9;
-$city-label: #82ccdd;
-$weather-station-id-label: #45aaf2;
-$weather-station-id: #f8c291;
-$lat-long-label: #78e08f;
-$lat-long: #1dd1a1;
-
-$red-alert-error: #ee5253;
-$newly-append-card: #ff9f43;
+$current-condition: #ffffff;
+$min-temperature: #6a89cc;
+$max-temperature: #fa983a;
+$humidity-label: #7f8fa6;
+$humidity: #8e8e91;
 
 .forecast-card {
   border: 10px solid $base-weather;
@@ -19,4 +16,41 @@ $newly-append-card: #ff9f43;
   margin: 10px;
   text-align: center;
   padding: 20px;
+}
+
+.current-condition {
+  background-color: $current-condition;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.min-temp-label,
+.max-temp-label {
+  background-color: $base-weather;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.min-temp {
+  background-color: $min-temperature;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.max-temp {
+  background-color: $max-temperature;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.humidity-label {
+  background-color: $humidity-label;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.humidity {
+  background-color: $humidity;
+  padding: 5px;
+  border-radius: 5px;
 }

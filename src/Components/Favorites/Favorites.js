@@ -18,25 +18,30 @@ export class Favorites extends Component {
       };
       return (
         <div className='forecast-card' style={cardStyle}>
-          <h1>City: {city.title}</h1>
+          <h1 className='city-title'>{city.title}</h1>
           <h1>
-            <span>
-              Current Condition:{' '}
+            <span className='current-condition-label'>Current Condition: </span>
+            <span className='current-condition'>
               {city.consolidated_weather[0].weather_state_name}
             </span>
           </h1>
           <h2>
-            <span>
-              Min Temp (Degree Celsius): {city.consolidated_weather[0].min_temp}
+            <span className='min-temp-label'>Min Temp (Degree Celsius): </span>
+            <span className='min-temp'>
+              {city.consolidated_weather[0].min_temp}
             </span>
           </h2>
           <h2>
-            <span>
-              Max Temp (Degree Celsius): {city.consolidated_weather[0].max_temp}
+            <span className='max-temp-label'>Max Temp (Degree Celsius): </span>
+            <span className='max-temp'>
+              {city.consolidated_weather[0].max_temp}
             </span>
           </h2>
           <h2>
-            <span>Humidity (%): {city.consolidated_weather[0].humidity}</span>
+            <span className='humidity-label'>Humidity (%): </span>
+            <span className='humidity'>
+              {city.consolidated_weather[0].humidity}
+            </span>
           </h2>
         </div>
       );
