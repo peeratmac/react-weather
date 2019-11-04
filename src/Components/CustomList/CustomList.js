@@ -6,8 +6,12 @@ export class CustomList extends Component {
     return weatherInfo.map((city, i) => {
       return (
         <div className='forecast-card'>
-          <h1>{city.title}</h1>
-          <h2>Day 2: {city.consolidated_weather[1].weather_state_name} </h2>
+          <h1>
+            <span className='city-title'>{city.title}</span>
+          </h1>
+          <h2 className='current-condition-label'>
+            Day 2: {city.consolidated_weather[1].weather_state_name}{' '}
+          </h2>
           <h2>
             Temperature (Degree Celsius):
             <span className='max-temp'>
@@ -18,7 +22,9 @@ export class CustomList extends Component {
               {city.consolidated_weather[1].min_temp}
             </span>
           </h2>
-          <h2>Day 3: {city.consolidated_weather[2].weather_state_name}</h2>
+          <h2 className='current-condition-label'>
+            Day 3: {city.consolidated_weather[2].weather_state_name}
+          </h2>
           <h2>
             Temperature (Degree Celsius):
             <span className='max-temp'>
@@ -29,7 +35,9 @@ export class CustomList extends Component {
               {city.consolidated_weather[2].min_temp}
             </span>
           </h2>
-          <h2>Day 4: {city.consolidated_weather[3].weather_state_name}</h2>
+          <h2 className='current-condition-label'>
+            Day 4: {city.consolidated_weather[3].weather_state_name}
+          </h2>
           <h2>
             Temperature (Degree Celsius):
             <span className='max-temp'>
