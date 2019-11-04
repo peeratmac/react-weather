@@ -25,7 +25,15 @@ exports[`APP should match the App Snapshot 1`] = `
         path="/current-conditions"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(CustomList)",
+            "type": [Function],
+          }
+        }
         path="/future-outlook"
       />
       <h1>

@@ -33,4 +33,19 @@ describe('FORM INPUT', () => {
   it('should match the FormInput Snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it.skip('should call to send weatherInfo to redux store when the Send ALL Station Data button is clicked', () => {
+    wrapper.instance().grabWeatherDataWithStationID();
+    wrapper.instance().forceUpdate();
+    expect(mockSetWeatherInfo).toHaveBeenCalled();
+  });
+
+  it.skip('should call to send more information with a click of button', () => {
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click');
+
+    expect(mockSetWeatherInfo).toHaveBeenCalled();
+  });
 });

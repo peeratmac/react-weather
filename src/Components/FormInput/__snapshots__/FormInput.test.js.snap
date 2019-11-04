@@ -23,7 +23,7 @@ exports[`FORM INPUT should match the FormInput Snapshot 1`] = `
         className="submit-button"
         onClick={[Function]}
       >
-        Send Station Data
+        Send ALL Station Data
       </button>
       <button
         className="submit-button"

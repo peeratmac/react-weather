@@ -101,7 +101,7 @@ export class FormInput extends Component {
               onClick={this.grabWeatherDataWithStationID}
               className='submit-button'
             >
-              Send Station Data
+              Send ALL Station Data
             </button>
             <button onClick={this.getSpecificWeather} className='submit-button'>
               Get Specific Weather
