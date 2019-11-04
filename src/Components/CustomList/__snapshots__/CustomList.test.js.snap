@@ -3,7 +3,7 @@
 exports[`CUSTOM LIST should match the CustomList Snapshot 1`] = `
 <div>
   <h1>
-    LIST 2 PAGE
+    Future Outlook
   </h1>
 </div>
 `;

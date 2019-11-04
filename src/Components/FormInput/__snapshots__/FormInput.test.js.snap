@@ -7,9 +7,9 @@ exports[`FORM INPUT should match the FormInput Snapshot 1`] = `
   <section
     className="form"
   >
-    <h3>
+    <h1>
       USE WEATHER STATION ID
-    </h3>
+    </h1>
     <form>
       <input
         className="form-input"
@@ -32,9 +32,9 @@ exports[`FORM INPUT should match the FormInput Snapshot 1`] = `
         Get Specific Weather
       </button>
     </form>
-    <h3>
+    <h1>
       CITY LOOKUP
-    </h3>
+    </h1>
     <form>
       <input
         className="form-input"
@@ -51,9 +51,9 @@ exports[`FORM INPUT should match the FormInput Snapshot 1`] = `
         Get Weather
       </button>
     </form>
-    <h3>
+    <h1>
       LATITUDE and LONGITUDE
-    </h3>
+    </h1>
     <form>
       <input
         className="form-input"

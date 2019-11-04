@@ -22,11 +22,11 @@ exports[`APP should match the App Snapshot 1`] = `
             "type": [Function],
           }
         }
-        path="/list1"
+        path="/current-conditions"
       />
       <Route
         component={[Function]}
-        path="/list2"
+        path="/future-outlook"
       />
       <h1>
         Find Your Weather Station and Latitude Longitude

@@ -9,17 +9,17 @@ exports[`NAV should match the Nav Snapshot 1`] = `
     className="nav-links"
   >
     <Link
-      to="/list1"
+      to="/current-conditions"
     >
       <li>
-        List 1
+        Current Conditions
       </li>
     </Link>
     <Link
-      to="/list2"
+      to="/future-outlook"
     >
       <li>
-        List 2
+        Future Outlook
       </li>
     </Link>
     <Link
