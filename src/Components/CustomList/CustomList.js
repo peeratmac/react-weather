@@ -4,7 +4,7 @@ export class CustomList extends Component {
   render() {
     return (
       <div>
-        <h1>LIST 2 PAGE</h1>
+        <h1>Future Outlook</h1>
       </div>
     );
   }

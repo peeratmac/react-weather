@@ -8,11 +8,11 @@ export class Nav extends Component {
       <nav>
         <h2>Weather Station</h2>
         <ul className='nav-links'>
-          <Link to='/list1'>
-            <li>List 1</li>
+          <Link to='/current-conditions'>
+            <li>Current Conditions</li>
           </Link>
-          <Link to='/list2'>
-            <li>List 2</li>
+          <Link to='/future-outlook'>
+            <li>Future Outlook</li>
           </Link>
           <Link to='/'>
             <li>Home</li>
