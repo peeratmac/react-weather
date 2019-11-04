@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { FormInput } from './FormInput';
+import { mapStateToProps, mapDispatchToProps } from './FormInput';
+import { targetCity, getLatLong } from '../../actions';
 
 describe('FORM INPUT', () => {
   let wrapper;
@@ -47,5 +49,69 @@ describe('FORM INPUT', () => {
       .simulate('click');
 
     expect(mockSetWeatherInfo).toHaveBeenCalled();
+  });
+
+  it('should show inital state of stationIDs available to be fetched', () => {
+    const initialState = {
+      stationIDs: [
+        2487956,
+        2487889,
+        2488042,
+        2487796,
+        2488853,
+        349859,
+        56558361,
+        773964,
+        1132447,
+        773692,
+        2488867
+      ]
+    };
+
+    expect(mapStateToProps(initialState).stationIDs).toEqual([
+      2487956,
+      2487889,
+      2488042,
+      2487796,
+      2488853,
+      349859,
+      56558361,
+      773964,
+      1132447,
+      773692,
+      2488867
+    ]);
+  });
+
+  it('should update selectedCity as the value changes in the form input', () => {
+    const mockDispatch = jest.fn();
+
+    const actionToDispatch = targetCity({
+      selectedCity: 'Denver'
+    });
+
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.targetCity({
+      selectedCity: 'Denver'
+    });
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('should update latitude and longitude as the value changes in the form input', () => {
+    const mockDispatch = jest.fn();
+
+    const actionToDispatch = getLatLong({
+      latLong: '54.977940,-1.611620'
+    });
+
+    const mappedProps = mapDispatchToProps(mockDispatch);
+
+    mappedProps.getLatLong({
+      latLong: '54.977940,-1.611620'
+    });
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
