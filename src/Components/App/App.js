@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 export class App extends Component {
   componentDidMount = async () => {
-    fetchPopularCities('DEN').then(cities => {
+    fetchPopularCities('SAN').then(cities => {
       console.log(cities);
       this.props.loadCities(cities);
       const IDs = cities.map(city => city.woeid);
@@ -46,8 +46,8 @@ export class App extends Component {
               )}
             />
 
-            <Route path='/list1' component={Favorites} />
-            <Route path='/list2' component={CustomList} />
+            <Route path='/current-conditions' component={Favorites} />
+            <Route path='/future-outlook' component={CustomList} />
             <h1>Find Your Weather Station and Latitude Longitude</h1>
           </Switch>
         </div>

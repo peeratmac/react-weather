@@ -5,7 +5,6 @@ import WeatherCard from '../../Components/WeatherCard/WeatherCard';
 import { connect } from 'react-redux';
 export class Favorites extends Component {
   componentDidMount() {
-    console.log('yep');
     console.log(this.props.stationIDs);
   }
 

@@ -28,7 +28,11 @@ nav {
   min-height: 10vh;
   background: #38ada9;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+}
+
+img {
+  height: 50px;
 }
 
 .nav-links {

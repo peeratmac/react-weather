@@ -86,7 +86,7 @@ export class FormInput extends Component {
     return (
       <div className='form-section'>
         <section className='form'>
-          <h3>USE WEATHER STATION ID</h3>
+          <h1>USE WEATHER STATION ID</h1>
           <form>
             <input
               name='station'
@@ -107,7 +107,7 @@ export class FormInput extends Component {
               Get Specific Weather
             </button>
           </form>
-          <h3>CITY LOOKUP</h3>
+          <h1>CITY LOOKUP</h1>
           <form>
             <input
               name='city'
@@ -122,7 +122,7 @@ export class FormInput extends Component {
               Get Weather
             </button>
           </form>
-          <h3>LATITUDE and LONGITUDE</h3>
+          <h1>LATITUDE and LONGITUDE</h1>
           <form>
             <input
               name='lat-long'
