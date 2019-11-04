@@ -1,9 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CUSTOM LIST should match the CustomList Snapshot 1`] = `
-<div>
-  <h1>
-    Future Outlook
-  </h1>
-</div>
-`;
+exports[`CUSTOM LIST should match the CustomList Snapshot 1`] = `null`;

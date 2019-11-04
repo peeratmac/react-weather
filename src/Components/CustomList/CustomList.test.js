@@ -6,7 +6,9 @@ describe('CUSTOM LIST', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<CustomList />);
+    wrapper = shallow(
+      <CustomList cities={''} stationIDs={[]} weatherInfo={[]} />
+    );
   });
 
   it('should match the CustomList Snapshot', () => {
