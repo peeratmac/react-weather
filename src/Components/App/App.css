@@ -31,6 +31,10 @@ nav {
   font-size: 30px;
 }
 
+img {
+  height: 50px;
+}
+
 .nav-links {
   width: 50%;
   display: flex;
