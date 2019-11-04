@@ -56,12 +56,12 @@ export class App extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loadCities: cities => dispatch(loadCities(cities)),
   loadWeather: stationIDs => dispatch(loadWeather(stationIDs))
 });
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   cities: state.cities,
   stationIDs: state.stationIDs
 });
