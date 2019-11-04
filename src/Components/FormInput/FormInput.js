@@ -15,7 +15,7 @@ import {
   fetchUsingStationID
 } from '../../apiCalls';
 import { Redirect } from 'react-router';
-
+import PropTypes from 'prop-types';
 export class FormInput extends Component {
   constructor() {
     super();
@@ -166,3 +166,12 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(FormInput);
+
+FormInput.propTypes = {
+  selectedCity: PropTypes.string,
+  latLong: PropTypes.string,
+  stationIDs: PropTypes.array,
+  weatherInfo: PropTypes.array,
+  currentStation: PropTypes.string,
+  cities: PropTypes.array
+};
