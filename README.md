@@ -23,10 +23,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Working Product GIF
 
-![working-product-gif]('./screenshots/working-product.gif)
+![working-product-gif]('screenshots/working-product.gif)
 
 ## Static Screenshots
 
-![home-page-1]('./screenshots/home-page-1.png')
-![current-conditions-1]('./screenshots/current-conditions-1.png')
-![future-outlook-1]('./screenshots/future-outlook-1.png')
+![home-page-1]('screenshots/home-page-1.png')
+![current-conditions-1]('screenshots/current-conditions-1.png')
+![future-outlook-1]('screenshots/future-outlook-1.png')
