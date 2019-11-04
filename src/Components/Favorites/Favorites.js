@@ -3,6 +3,7 @@ import './Favorites.scss';
 import { fetchUsingStationID, fetchPopularCities } from '../../apiCalls';
 import WeatherCard from '../../Components/WeatherCard/WeatherCard';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 export class Favorites extends Component {
   componentDidMount() {
     console.log(this.props.stationIDs);
@@ -58,3 +59,9 @@ export default connect(
   mapStateToProps,
   null
 )(Favorites);
+
+Favorites.propTypes = {
+  cities: PropTypes.array,
+  stationIDs: PropTypes.array,
+  weatherInfo: PropTypes.array
+};

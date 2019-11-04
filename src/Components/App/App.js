@@ -14,8 +14,8 @@ import CustomList from '../../Components/CustomList/CustomList';
 import './App.css';
 import { connect } from 'react-redux';
 import { loadCities, loadWeather } from '../../actions/index';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class App extends Component {
   componentDidMount = async () => {
@@ -70,3 +70,10 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
+App.propTypes = {
+  loadCities: PropTypes.func,
+  loadWeather: PropTypes.func,
+  cities: PropTypes.array,
+  stationIDs: PropTypes.array
+};

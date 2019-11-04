@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 export class CustomList extends Component {
   render() {
     const { weatherInfo } = this.props;
@@ -64,3 +65,9 @@ export default connect(
   mapStateToProps,
   null
 )(CustomList);
+
+CustomList.propTypes = {
+  cities: PropTypes.array,
+  stationIDs: PropTypes.array,
+  weatherInfo: PropTypes.array
+};
