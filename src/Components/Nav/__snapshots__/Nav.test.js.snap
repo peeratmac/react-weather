@@ -9,24 +9,51 @@ exports[`NAV should match the Nav Snapshot 1`] = `
     className="nav-links"
   >
     <Link
+      style={
+        Object {
+          "color": "white",
+          "textDecoration": "none",
+        }
+      }
       to="/current-conditions"
     >
       <li>
         Current Conditions
+        <img
+          src="currentConditions.svg"
+        />
       </li>
     </Link>
     <Link
+      style={
+        Object {
+          "color": "white",
+          "textDecoration": "none",
+        }
+      }
       to="/future-outlook"
     >
       <li>
-        Future Outlook
+        Future Outlook 
+        <img
+          src="futureOutlook.svg"
+        />
       </li>
     </Link>
     <Link
+      style={
+        Object {
+          "color": "white",
+          "textDecoration": "none",
+        }
+      }
       to="/"
     >
       <li>
-        Home
+        Home 
+        <img
+          src="home.svg"
+        />
       </li>
     </Link>
   </ul>
